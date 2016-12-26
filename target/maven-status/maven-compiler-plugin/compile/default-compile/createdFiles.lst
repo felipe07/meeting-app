@@ -1,0 +1,8 @@
+org\test\model\MeetingMediator.class
+org\test\model\Meeting.class
+org\test\model\ParticipantAlreadyIncluded.class
+org\test\model\ParticipantAlreadyBlocked.class
+org\test\model\InsufficientNumberOfParticipants.class
+org\test\model\MeetingRole.class
+org\test\model\Participant.class
+org\test\model\ParticipantNotIncluded.class
