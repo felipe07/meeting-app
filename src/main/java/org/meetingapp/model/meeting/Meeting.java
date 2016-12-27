@@ -49,17 +49,20 @@ public class Meeting {
     }
 
     public void selectPresenter(String participantName) throws PresenterAlreadySelected {
-        for (Participant meetingParticipant : participants.values()) {
-            if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
-               isThereAPresenter = true;
-            }
-        }
-
+        checkIfThereIsPresenterForMeeting();
         if (!isThereAPresenter) {
             participants.get(participantName).setParticipantRole(ParticipantRole.PRESENTER);
             isThereAPresenter = true;
         } else {
             throw new PresenterAlreadySelected();
+        }
+    }
+
+    public void checkIfThereIsPresenterForMeeting() {
+        for (Participant meetingParticipant : participants.values()) {
+            if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
+               isThereAPresenter = true;
+            }
         }
     }
 
