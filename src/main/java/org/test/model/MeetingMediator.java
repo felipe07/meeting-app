@@ -1,5 +1,8 @@
 package org.test.model;
 
+import org.test.model.meeting.*;
+import org.test.model.participant.Participant;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;

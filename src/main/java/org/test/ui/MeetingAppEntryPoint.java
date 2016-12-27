@@ -8,8 +8,9 @@ import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
-import org.test.model.*;
-import org.test.model.InsufficientNumberOfParticipants;
+import org.test.model.MeetingMediator;
+import org.test.model.meeting.*;
+import org.test.model.participant.Participant;
 
 import java.util.concurrent.*;
 
