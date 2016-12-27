@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.test</groupId>
+	<groupId>org.meetingapp</groupId>
 	<artifactId>meeting-app</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
@@ -114,7 +114,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- The Jetty plugin allows us to easily test the development build by
+			<!-- The Jetty plugin allows us to easily meetingapp the development build by
 				running jetty:run on the command line. -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
