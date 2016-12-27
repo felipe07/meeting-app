@@ -1,18 +1,16 @@
 package org.meetingapp.model.participant;
 
-import org.meetingapp.model.meeting.MeetingRole;
-
 /**
  * Created by User on 23/12/2016.
  */
 public class Participant {
 
     private String name;
-    private MeetingRole meetingRole;
+    private ParticipantRole participantRole;
 
-    public Participant(String name, MeetingRole meetingRole) {
+    public Participant(String name, ParticipantRole participantRole) {
         this.name = name;
-        this.meetingRole = meetingRole;
+        this.participantRole = participantRole;
     }
 
     public String getName() {
@@ -23,11 +21,11 @@ public class Participant {
         this.name = name;
     }
 
-    public MeetingRole getMeetingRole() {
-        return meetingRole;
+    public ParticipantRole getParticipantRole() {
+        return participantRole;
     }
 
-    public void setMeetingRole(MeetingRole meetingRole) {
-        this.meetingRole = meetingRole;
+    public void setParticipantRole(ParticipantRole participantRole) {
+        this.participantRole = participantRole;
     }
 }

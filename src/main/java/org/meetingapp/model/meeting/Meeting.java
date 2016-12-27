@@ -1,5 +1,6 @@
 package org.meetingapp.model.meeting;
 
+import org.meetingapp.model.participant.ParticipantRole;
 import org.meetingapp.model.participant.Participant;
 
 import java.util.*;
@@ -38,7 +39,7 @@ public class Meeting {
     public void removeParticipant(Participant meetingParticipant) throws ParticipantNotIncluded {
         String participantName = meetingParticipant.getName();
         if (participants.containsKey(participantName)) {
-            if (meetingParticipant.getMeetingRole().equals(MeetingRole.PRESENTER)) {
+            if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
                 isThereAPresenter = false;
             }
             participants.remove(participantName);
@@ -49,13 +50,13 @@ public class Meeting {
 
     public void selectPresenter(String participantName) throws PresenterAlreadySelected {
         for (Participant meetingParticipant : participants.values()) {
-            if (meetingParticipant.getMeetingRole().equals(MeetingRole.PRESENTER)) {
+            if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
                isThereAPresenter = true;
             }
         }
 
         if (!isThereAPresenter) {
-            participants.get(participantName).setMeetingRole(MeetingRole.PRESENTER);
+            participants.get(participantName).setParticipantRole(ParticipantRole.PRESENTER);
             isThereAPresenter = true;
         } else {
             throw new PresenterAlreadySelected();
@@ -63,7 +64,7 @@ public class Meeting {
     }
 
     public void deselectPresenter(String participantName) {
-        participants.get(participantName).setMeetingRole(MeetingRole.ATTENDEE);
+        participants.get(participantName).setParticipantRole(ParticipantRole.ATTENDEE);
     }
 
     public void startMeeting() throws InsufficientNumberOfParticipants, MeetingInProgress {

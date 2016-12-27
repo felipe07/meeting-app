@@ -1,5 +1,4 @@
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\InsufficientNumberOfParticipants.java
-C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\MeetingRole.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\PresenterAlreadySelected.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\MeetingInProgress.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\ParticipantAlreadyBlocked.java
@@ -9,4 +8,5 @@ C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meetin
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\MeetingMediator.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\ui\MeetingAppEntryPoint.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\meeting\ParticipantNotBlocked.java
+C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\participant\ParticipantRole.java
 C:\Users\User\IdeaProjects\meeting-app\src\main\java\org\meetingapp\model\participant\Participant.java

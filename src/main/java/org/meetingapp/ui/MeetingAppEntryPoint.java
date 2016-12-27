@@ -10,6 +10,7 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.*;
 import org.meetingapp.model.MeetingMediator;
 import org.meetingapp.model.meeting.*;
+import org.meetingapp.model.participant.ParticipantRole;
 import org.meetingapp.model.participant.Participant;
 
 import java.util.concurrent.*;
@@ -163,7 +164,7 @@ public class MeetingAppEntryPoint extends UI {
                 updateMeetingTable();
 
                 Participant removedParticipant = meetingMediator.getParticipant(participantName);
-                if (removedParticipant.getMeetingRole().equals(MeetingRole.PRESENTER)) {
+                if (removedParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
                     waitPresenterSelection();
                     logArea.setValue(logArea.getValue() + "\n" + "You have 5 seconds to select the presenter!");
                 }
@@ -181,12 +182,12 @@ public class MeetingAppEntryPoint extends UI {
                 Button presenterButton = clickEvent.getButton();
                 String personName = (String) clickEvent.getButton().getData();
                 String response;
-                if (presenterButton.getCaption().equals(MeetingRole.PRESENTER.getRole())) {
+                if (presenterButton.getCaption().equals(ParticipantRole.PRESENTER.getRole())) {
                     response = meetingMediator.selectMeetingPresenter(personName, currentMeeting);
-                    presenterButton.setCaption(MeetingRole.ATTENDEE.getRole());
+                    presenterButton.setCaption(ParticipantRole.ATTENDEE.getRole());
                 } else {
                     response = meetingMediator.deselectMeetingPresenter(personName, currentMeeting);
-                    presenterButton.setCaption(MeetingRole.PRESENTER.getRole());
+                    presenterButton.setCaption(ParticipantRole.PRESENTER.getRole());
                 }
                 logArea.setValue(logArea.getValue() + "\n" + response);
                 logArea.setCursorPosition(logArea.getValue().length());
@@ -210,7 +211,7 @@ public class MeetingAppEntryPoint extends UI {
         meetingTable.setCaption("Welcome To Meeting: " + currentMeeting);
         meetingTable.setSizeFull();
         meetingTable.addContainerProperty("Name", String.class, null);
-        meetingTable.addContainerProperty("Role", MeetingRole.class, null);
+        meetingTable.addContainerProperty("Role", ParticipantRole.class, null);
         meetingTable.addContainerProperty("Remove Absent", Button.class, null);
         meetingTable.addContainerProperty("Select Presenter/Attendee", Button.class, null);
         meetingTable.setColumnAlignment("Remove Absent", Table.Align.CENTER);
@@ -218,9 +219,9 @@ public class MeetingAppEntryPoint extends UI {
         for (Participant participant : meetingMediator.getMeetingParticipants(currentMeeting).values()) {
             Button removeButton = new Button("Remove", removeAbsentClickListener);
             removeButton.setData(participant.getName());
-            Button presenterButton = new Button(MeetingRole.PRESENTER.getRole(), selectPresenterClickListener);
+            Button presenterButton = new Button(ParticipantRole.PRESENTER.getRole(), selectPresenterClickListener);
             presenterButton.setData(participant.getName());
-            meetingTable.addItem(new Object[]{participant.getName(), participant.getMeetingRole(),
+            meetingTable.addItem(new Object[]{participant.getName(), participant.getParticipantRole(),
                     removeButton, presenterButton}, participant.getName());
         }
         meetingTable.setPageLength(meetingTable.size());
