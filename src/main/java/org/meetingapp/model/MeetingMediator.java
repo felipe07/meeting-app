@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class MeetingMediator {
 
-    private Map<String, Meeting> meetings = new HashMap<>();
+    private Meeting currentMeeting;
     private Map<String, Participant> participants = new HashMap<>();
 
     private DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -22,59 +22,69 @@ public class MeetingMediator {
         createParticipants();
     }
 
+    public String getCurrentMeetingSubject() {
+        return currentMeeting.getSubject();
+    }
+
     public String createMeeting(String meetingSubject) {
         createParticipants();
-        Meeting newMeeting = new Meeting(meetingSubject);
-        meetings.put(meetingSubject, newMeeting);
-        return String.format("Meeting %s created on: %s", new Object[]{meetingSubject, df.format(new Date())});
+        currentMeeting = new Meeting(meetingSubject);
+        return String.format("Meeting %s created on: %s",
+                new Object[]{meetingSubject, df.format(new Date())});
     }
 
-    public String addParticipantToMeeting(String participantName, String meetingSubject) throws ParticipantAlreadyIncluded {
+    public String addParticipantToMeeting(String participantName) throws ParticipantAlreadyIncluded {
+        currentMeeting.checkIfParticipantWasIncludedBefore(participantName);
         Participant meetingParticipant = participants.get(participantName);
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.addParticipant(meetingParticipant);
-        return String.format("%s added to meeting %s on %s", new Object[]{participantName, meetingSubject, df.format(new Date())});
+        currentMeeting.addParticipant(meetingParticipant);
+        return String.format("%s added to meeting %s on %s",
+                new Object[]{participantName, getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public String removeParticipantFromMeeting(String participantName, String meetingSubject) throws ParticipantNotIncluded {
+    public String removeParticipantFromMeeting(String participantName) throws ParticipantNotIncluded {
+        currentMeeting.checkIfParticipantWasNotIncludedBefore(participantName);
         Participant meetingParticipant = participants.get(participantName);
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.removeParticipant(meetingParticipant);
-        return String.format("%s removed from meeting %s on %s", new Object[]{participantName, meetingSubject, df.format(new Date())});
+        currentMeeting.removeParticipant(meetingParticipant);
+        return String.format("%s removed from meeting %s on %s",
+                new Object[]{participantName, getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public Map<String, Participant> getMeetingParticipants(String meetingSubject) {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        return selectedMeeting.getParticipants();
+    public Map<String, Participant> getMeetingParticipants() {
+        return currentMeeting.getParticipants();
     }
 
-    public String selectMeetingPresenter(String participantName, String meetingSubject) throws PresenterAlreadySelected {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.selectPresenter(participantName);
-        return String.format("%s selected as %s for meeting %s on %s", new Object[]{participantName, ParticipantRole.PRESENTER, meetingSubject, df.format(new Date())});
+    public String selectMeetingPresenter(String participantName) throws PresenterAlreadySelected {
+        currentMeeting.checkIfThereIsPresenterForMeeting();
+        currentMeeting.selectPresenter(participantName);
+        return String.format("%s selected as %s for meeting %s on %s",
+                new Object[]{participantName, ParticipantRole.PRESENTER, getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public String deselectMeetingPresenter(String participantName, String meetingSubject) {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.deselectPresenter(participantName);
-        return String.format("%s deselected as %s for meeting %s on %s", new Object[]{participantName, ParticipantRole.PRESENTER, meetingSubject, df.format(new Date())});
+    public String deselectMeetingPresenter(String participantName) {
+        currentMeeting.deselectPresenter(participantName);
+        return String.format("%s deselected as %s for meeting %s on %s",
+                new Object[]{participantName, ParticipantRole.PRESENTER, getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public String startMeeting(String meetingSubject) throws InsufficientNumberOfParticipants, MeetingInProgress {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.startMeeting();
-        return String.format("Meeting %s started on: %s", new Object[]{meetingSubject, df.format(new Date())});
+    public String startMeeting() throws InsufficientNumberOfParticipants, MeetingInProgress {
+        currentMeeting.startMeeting();
+        return String.format("Meeting %s started on: %s",
+                new Object[]{getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public String finishMeeting(String meetingSubject) {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        selectedMeeting.finishMeeting();
-        return String.format("Meeting %s finished on: %s", new Object[]{meetingSubject, df.format(new Date())});
+    public String finishMeeting() {
+        currentMeeting.finishMeeting();
+        return String.format("Meeting %s finished on: %s",
+                new Object[]{getCurrentMeetingSubject(), df.format(new Date())});
     }
 
-    public boolean isThereAPresenter(String meetingSubject) {
-        Meeting selectedMeeting = meetings.get(meetingSubject);
-        return selectedMeeting.isThereAPresenter();
+    public void checkAMeetingHasBeenCreated() throws MeetingNotCreated {
+        if (currentMeeting == null)
+            throw new MeetingNotCreated();
+    }
+
+    public boolean isThereAPresenter() {
+        return currentMeeting.isThereAPresenter();
     }
 
     public Participant getParticipant(String participantName) {

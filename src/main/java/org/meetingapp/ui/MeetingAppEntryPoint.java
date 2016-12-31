@@ -26,12 +26,11 @@ import java.util.concurrent.*;
 public class MeetingAppEntryPoint extends UI {
 
     private MeetingMediator meetingMediator = new MeetingMediator();
-    private String currentMeeting = new String();
     private HorizontalLayout mainLayout;
     private HorizontalLayout meetingLayout;
     private TextField meetingSubjectTF;
     private TextArea logArea;
-    private Table confMeetingTable = new Table();
+    private Table setupMeetingTable = new Table();
     private Table meetingTable = new Table();
 
     @Override
@@ -74,8 +73,10 @@ public class MeetingAppEntryPoint extends UI {
             parent.removeComponent(meetingTable);
         }
 
+        String meetingSubject = meetingMediator.getCurrentMeetingSubject();
+
         meetingTable.removeAllItems();
-        meetingTable.setCaption("Welcome To Meeting: " + currentMeeting);
+        meetingTable.setCaption("Welcome To Meeting: " + meetingSubject);
         meetingTable.setSizeFull();
         meetingTable.addContainerProperty("Name", String.class, null);
         meetingTable.addContainerProperty("Role", ParticipantRole.class, null);
@@ -83,7 +84,7 @@ public class MeetingAppEntryPoint extends UI {
         meetingTable.addContainerProperty("Select Presenter/Attendee", Button.class, null);
         meetingTable.setColumnAlignment("Remove Absent", Table.Align.CENTER);
         meetingTable.setColumnAlignment("Select Presenter/Attendee", Table.Align.CENTER);
-        for (Participant participant : meetingMediator.getMeetingParticipants(currentMeeting).values()) {
+        for (Participant participant : meetingMediator.getMeetingParticipants().values()) {
             Button removeButton = new Button("Remove", removeAbsentClickListener);
             removeButton.setData(participant.getName());
             Button presenterButton = new Button(ParticipantRole.PRESENTER.getRole(), selectPresenterClickListener);
@@ -100,13 +101,28 @@ public class MeetingAppEntryPoint extends UI {
         logArea.setCursorPosition(logArea.getValue().length());
     }
 
+    public void reconfigureSetupMeetingTable() {
+        setupMeetingTable.removeAllItems();
+        setupMeetingTable.setCaption("Setup Your Meeting: " + meetingSubjectTF.getValue());
+        setupMeetingTable.setSizeFull();
+        setupMeetingTable.addContainerProperty("Name", String.class, null);
+        setupMeetingTable.addContainerProperty("Add/Remove To Meeting", Button.class, null);
+        setupMeetingTable.setColumnAlignment("Add/Remove To Meeting", Table.Align.CENTER);
+        for (String name : meetingMediator.getAllParticipantNames()) {
+            Button addButton = new Button("Add", AddButtonClickListener);
+            addButton.setData(name);
+            setupMeetingTable.addItem(new Object[]{name, addButton}, name);
+        }
+        setupMeetingTable.setPageLength(setupMeetingTable.size());
+    }
+
     public void waitPresenterSelection() {
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
         ScheduledFuture scheduledFuture =
                 scheduledExecutorService.schedule(
                         new Callable() {
                             public Object call() throws Exception {
-                                boolean wasPresenterSelected = meetingMediator.isThereAPresenter(currentMeeting);
+                                boolean wasPresenterSelected = meetingMediator.isThereAPresenter();
                                 if (!wasPresenterSelected) {
                                     Page.getCurrent().reload();
                                 }
@@ -120,28 +136,16 @@ public class MeetingAppEntryPoint extends UI {
         @Override
         public void buttonClick(Button.ClickEvent clickEvent) {
             if (!meetingSubjectTF.getValue().isEmpty()) {
-                currentMeeting = meetingSubjectTF.getValue();
-                String response = meetingMediator.createMeeting(currentMeeting);
+                String typedMeetingSubject = meetingSubjectTF.getValue();
+                String response = meetingMediator.createMeeting(typedMeetingSubject);
                 meetingSubjectTF.clear();
 
-                confMeetingTable.removeAllItems();
-                confMeetingTable.setCaption("Setup Your Meeting: " + meetingSubjectTF.getValue());
-                confMeetingTable.setSizeFull();
-                confMeetingTable.addContainerProperty("Name", String.class, null);
-                confMeetingTable.addContainerProperty("Add/Remove To Meeting", Button.class, null);
-                confMeetingTable.setColumnAlignment("Add/Remove To Meeting", Table.Align.CENTER);
-                for (String name : meetingMediator.getAllParticipantNames()) {
-                    Button addButton = new Button("Add", AddButtonClickListener);
-                    addButton.setData(name);
-                    confMeetingTable.addItem(new Object[]{name, addButton}, name);
-                }
-                confMeetingTable.setPageLength(confMeetingTable.size());
-
+                reconfigureSetupMeetingTable();
                 initializeLogArea();
                 printEventToLogArea(response);
 
                 meetingLayout.removeAllComponents();
-                meetingLayout.addComponent(confMeetingTable);
+                meetingLayout.addComponent(setupMeetingTable);
                 meetingLayout.addComponent(logArea);
                 mainLayout.addComponent(meetingLayout);
             } else {
@@ -158,10 +162,10 @@ public class MeetingAppEntryPoint extends UI {
                 String personName = (String) clickEvent.getButton().getData();
                 String response;
                 if (addButton.getCaption().equals("Add")) {
-                    response = meetingMediator.addParticipantToMeeting(personName, currentMeeting);
+                    response = meetingMediator.addParticipantToMeeting(personName);
                     addButton.setCaption("Remove");
                 } else {
-                    response = meetingMediator.removeParticipantFromMeeting(personName, currentMeeting);
+                    response = meetingMediator.removeParticipantFromMeeting(personName);
                     addButton.setCaption("Add");
                 }
                 printEventToLogArea(response);
@@ -175,20 +179,18 @@ public class MeetingAppEntryPoint extends UI {
     Button.ClickListener startButtonClickListener = new Button.ClickListener() {
         @Override
         public void buttonClick(Button.ClickEvent clickEvent) {
-            if (!currentMeeting.isEmpty()) {
-                try {
-                    String response = meetingMediator.startMeeting(currentMeeting);
-                    printEventToLogArea(response);
-                    meetingLayout.removeComponent(confMeetingTable);
-                    updateMeetingTable();
-                    waitPresenterSelection();
-                    printEventToLogArea("You have 5 seconds to select the presenter!");
-                } catch (InsufficientNumberOfParticipants | MeetingInProgress e) {
-                    new Notification(e.getMessage()).show(Page.getCurrent());
-                }
-            } else {
-                new Notification("Please create a meeting first").show(Page.getCurrent());
+            try {
+                meetingMediator.checkAMeetingHasBeenCreated();
+                String response = meetingMediator.startMeeting();
+                printEventToLogArea(response);
+                meetingLayout.removeComponent(setupMeetingTable);
+                updateMeetingTable();
+                waitPresenterSelection();
+                printEventToLogArea("You have 5 seconds to select the presenter!");
+            } catch (MeetingNotCreated | InsufficientNumberOfParticipants | MeetingInProgress e) {
+                new Notification(e.getMessage()).show(Page.getCurrent());
             }
+
         }
     };
 
@@ -197,7 +199,7 @@ public class MeetingAppEntryPoint extends UI {
         public void buttonClick(Button.ClickEvent clickEvent) {
             try {
                 String participantName = (String) clickEvent.getButton().getData();
-                String response = meetingMediator.removeParticipantFromMeeting(participantName, currentMeeting);
+                String response = meetingMediator.removeParticipantFromMeeting(participantName);
                 printEventToLogArea(response);
                 meetingLayout.removeComponent(meetingTable);
                 updateMeetingTable();
@@ -221,10 +223,10 @@ public class MeetingAppEntryPoint extends UI {
                 String personName = (String) clickEvent.getButton().getData();
                 String response;
                 if (presenterButton.getCaption().equals(ParticipantRole.PRESENTER.getRole())) {
-                    response = meetingMediator.selectMeetingPresenter(personName, currentMeeting);
+                    response = meetingMediator.selectMeetingPresenter(personName);
                     presenterButton.setCaption(ParticipantRole.ATTENDEE.getRole());
                 } else {
-                    response = meetingMediator.deselectMeetingPresenter(personName, currentMeeting);
+                    response = meetingMediator.deselectMeetingPresenter(personName);
                     presenterButton.setCaption(ParticipantRole.PRESENTER.getRole());
                 }
                 printEventToLogArea(response);

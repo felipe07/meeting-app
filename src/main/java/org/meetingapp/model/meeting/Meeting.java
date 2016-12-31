@@ -27,47 +27,46 @@ public class Meeting {
         return participants;
     }
 
-    public void addParticipant(Participant meetingParticipant) throws ParticipantAlreadyIncluded {
+    public void addParticipant(Participant meetingParticipant) {
         String participantName = meetingParticipant.getName();
-        if (!participants.containsKey(participantName)) {
-            participants.put(participantName, meetingParticipant);
-        } else {
+        participants.put(participantName, meetingParticipant);
+    }
+
+    public void checkIfParticipantWasIncludedBefore(String participantName) throws ParticipantAlreadyIncluded {
+        if (participants.containsKey(participantName))
             throw new ParticipantAlreadyIncluded();
-        }
     }
 
-    public void removeParticipant(Participant meetingParticipant) throws ParticipantNotIncluded {
+    public void removeParticipant(Participant meetingParticipant) {
         String participantName = meetingParticipant.getName();
-        if (participants.containsKey(participantName)) {
-            if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
-                isThereAPresenter = false;
-            }
-            participants.remove(participantName);
-        } else {
+        participants.remove(participantName);
+        if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER))
+            isThereAPresenter = false;
+    }
+
+    public void checkIfParticipantWasNotIncludedBefore(String participantName) throws ParticipantNotIncluded {
+        if (!participants.containsKey(participantName))
             throw new ParticipantNotIncluded();
-        }
     }
 
-    public void selectPresenter(String participantName) throws PresenterAlreadySelected {
-        checkIfThereIsPresenterForMeeting();
-        if (!isThereAPresenter) {
-            participants.get(participantName).setParticipantRole(ParticipantRole.PRESENTER);
-            isThereAPresenter = true;
-        } else {
-            throw new PresenterAlreadySelected();
-        }
+    public void selectPresenter(String participantName) {
+        participants.get(participantName).setParticipantRole(ParticipantRole.PRESENTER);
+        isThereAPresenter = true;
     }
 
-    public void checkIfThereIsPresenterForMeeting() {
+    public void deselectPresenter(String participantName) {
+        participants.get(participantName).setParticipantRole(ParticipantRole.ATTENDEE);
+        isThereAPresenter = false;
+    }
+
+    public void checkIfThereIsPresenterForMeeting() throws PresenterAlreadySelected {
         for (Participant meetingParticipant : participants.values()) {
             if (meetingParticipant.getParticipantRole().equals(ParticipantRole.PRESENTER)) {
                isThereAPresenter = true;
             }
         }
-    }
-
-    public void deselectPresenter(String participantName) {
-        participants.get(participantName).setParticipantRole(ParticipantRole.ATTENDEE);
+        if (isThereAPresenter)
+            throw new PresenterAlreadySelected();
     }
 
     public void startMeeting() throws InsufficientNumberOfParticipants, MeetingInProgress {
