@@ -2,75 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9d2f076-86e2-4245-a144-bb070d50c584" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/MeetingNotCreated.java" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\META-INF\MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\META-INF\maven\org.test\meeting-app\pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\META-INF\maven\org.test\meeting-app\pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\meetingapp\model\meeting\MeetingRole.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$2$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$3.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$4.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint$MyUIServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MeetingAppEntryPoint.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MyUI$MyUIServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\MyUI.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\InsufficientNumberOfParticipants.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\Meeting.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\MeetingInProgress.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\MeetingMediator.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\MeetingRole.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\Participant.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\ParticipantAlreadyBlocked.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\ParticipantAlreadyIncluded.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\ParticipantNotBlocked.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\ParticipantNotIncluded.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\PresenterAlreadySelected.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\InsufficientNumberOfParticipants.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\Meeting.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\MeetingInProgress.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\MeetingRole.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\ParticipantAlreadyBlocked.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\ParticipantAlreadyIncluded.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\ParticipantNotBlocked.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\ParticipantNotIncluded.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\meeting\PresenterAlreadySelected.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\model\participant\Participant.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\AddButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$3.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$4.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$5.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint$MyUIServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\User\IdeaProjects\meeting-app\target\meeting-app-1.0-SNAPSHOT\WEB-INF\classes\org\test\ui\MeetingAppEntryPoint.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/model/meeting/Meeting.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/model/meeting/Meeting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/model/meeting/Meeting.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/model/meeting/Meeting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$1.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$1.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$2.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$2.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$3.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$3.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$4.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$4.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$5.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$5.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$6.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$6.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint$MyUIServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$MyUIServlet.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint$MyUIServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/ui/MeetingAppEntryPoint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/ui/MeetingAppEntryPoint.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/meetingapp/model/MeetingMediator.class" afterPath="$PROJECT_DIR$/target/classes/org/meetingapp/model/MeetingMediator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/model/MeetingMediator.class" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT/WEB-INF/classes/org/meetingapp/model/MeetingMediator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/meeting-app-1.0-SNAPSHOT.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/Meeting.java" afterPath="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/Meeting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/meetingapp/ui/MeetingAppEntryPoint.java" afterPath="$PROJECT_DIR$/src/main/java/org/meetingapp/ui/MeetingAppEntryPoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java" afterPath="$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -94,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MeetingAppEntryPoint.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MeetingAppEntryPoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/ui/MeetingAppEntryPoint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -171,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeetingMediator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MeetingMediator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46952224">
+              <caret line="30" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#549#550#0" expanded="true" />
@@ -258,8 +191,8 @@
         <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/NewException.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/MeetingNotCreated.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/Meeting.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/ui/MeetingAppEntryPoint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java" />
       </list>
     </option>
   </component>
@@ -1125,24 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#633#634#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#1996#1997#0" expanded="true" />
-            <element signature="e#2051#2052#0" expanded="true" />
-            <element signature="e#3510#3511#0" expanded="true" />
-            <element signature="e#3567#3568#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/model/meeting/Meeting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1159,9 +1074,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/ui/MeetingAppEntryPoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/meetingapp/model/MeetingMediator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46952224">
+          <caret line="30" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#585#586#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
+            <element signature="e#2051#2052#0" expanded="true" />
+            <element signature="e#3510#3511#0" expanded="true" />
+            <element signature="e#3567#3568#0" expanded="true" />
           </folding>
         </state>
       </provider>
